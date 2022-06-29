@@ -28,6 +28,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  contador = {};
+  str = string.split('');
+  for (i = 0; i < str.length ; i++) {
+    if (contador[str[i]]){
+      contador[str[i]] += 1;
+    } 
+    else contador[str[i]] = 1
+  }
+  return contador;
 }
 
 
