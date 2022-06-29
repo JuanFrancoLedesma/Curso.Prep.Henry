@@ -45,6 +45,14 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  str = s.split('');
+  mayusArray = [];
+  minusArray = [];
+  for (i = 0; i < str.length ; i++){
+    if (str[i] === str[i].toUpperCase()){mayusArray.push(str[i])}
+    else minusArray.push(str[i]);
+  }
+  return mayusArray.concat(minusArray).join('')
 }
 
 
