@@ -62,7 +62,19 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
-} 
+  array = [];
+  s = str.split(' ');
+  for (var i=0 ; i < s.length ; i++){
+    arrayProv = [];
+    ar = s[i].split('');
+    for (j=0 ; j<ar.length ; j++) {
+      arrayProv.unshift(ar[j]);
+    }
+    a = arrayProv.join('');
+    b = a.split()
+    array.push(b)
+  } 
+}
 
 
 function capicua(numero){
