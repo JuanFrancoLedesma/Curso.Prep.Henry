@@ -74,6 +74,7 @@ function asAmirror(str) {
     b = a.split()
     array.push(b)
   } 
+  return array.join(' ')
 }
 
 
@@ -82,13 +83,27 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  num = [] + numero;
+  array = num.split('');
+  for (var i = 0; i < num.length ; i++){
+    if (array[i] === array.reverse()[i]) {continue}
+    else return 'No es capicua'
+  }
+  return 'Es capicua'
 }
+
 
 
 function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  array = cadena.split('');
+  strSa = array.filter(letra => letra !== 'a');
+  strSab = strSa.filter(letra => letra !== 'b');
+  strSabc = strSab.filter(letra => letra !== 'c');
+  cadenaFil = strSabc.join('');
+  return cadenaFil
 }
 
 
@@ -96,6 +111,16 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  for (i=0; i<arr.length; i++){
+    for(j=i+1; j<arr.length; j++){
+      if(arr[i].length > arr[j].length){
+        aux = arr[i];
+        arr[i] = arr[j];
+        arr[j] = aux
+      }
+    }
+  }
+  return arr
 }
 
 
@@ -105,6 +130,27 @@ function buscoInterseccion(arreglo1, arreglo2){
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
   //Escribe tu código aquí  
+  array = [];
+  for (i=0; i<arreglo1.length; i++){
+    for (j=0; j<arreglo2.length; j++){
+      if (arreglo1[i] === arreglo2[j]){
+        array.push(arreglo1[i]);
+        break
+      }
+    }
+  }
+  return array;
+  /*obj = {}
+  for (i=0; i<arreglo1.length; i++){
+    for (j=0; j<arreglo2.length; j++){
+      if (arreglo1[i] === arreglo2[j]){
+        if (obj[i]){break};
+        (obj[1] = 0);
+        break;
+      } 
+    }
+  }
+  return Object.keys(obj);*/
 }
 
 
